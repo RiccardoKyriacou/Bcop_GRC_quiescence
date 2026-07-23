@@ -2,7 +2,10 @@
 
 First, we can use the following python script to generate intergenic GFF/GTF files, providing the _B. coprophila_ genome annotation (-g), along with metrics to describe the minimum distance from genes and the minimum/maximum length for the intergenic regions. For this study we ran the script like so: 
 ```
-python3 01_get_intergenic_GFF3.py -g ../../Annotations/bcop_core_GRC.gff3 --min_distance 500 --min_length 1000 --max_length 20000
+python3 01_get_intergenic_GFF3.py
+    -g ../../Annotations/bcop_core_GRC.gff3
+    --min_distance 500 --min_length 1000
+    --max_length 20000
 ```
 Output (intergenic GFF and GTF) from 01_get_intergenic_GFF3.py can be fouind in /outputs/ 
 
