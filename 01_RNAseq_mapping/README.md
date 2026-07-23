@@ -1,6 +1,8 @@
 # 1. RNAseq mapping code
 
-This script maps RNA reads from embryo, larval and adult data and maps it to the refernece _B. coprophila_ gneome and annotation 
+## Overview
+
+These scripts initiate our RNA-seq analysis by mapping RNA reads from embryo, larval and adult data and maps it to the refernece _B. coprophila_ gneome and annotation 
 
 ---
 
