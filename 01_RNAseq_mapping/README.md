@@ -2,6 +2,8 @@
 
 This script maps RNA reads from embryo, larval and adult data and maps it to the refernece _B. coprophila_ gneome and annotation 
 
+---
+
 First reads are trimmed (QC had been done prior to this study)
 ```
 echo "Trimming reads with fastp..."
