@@ -2,7 +2,7 @@
 
 RNA-seq analysis revealed two genes, g19161 and g19121, with clear bacterial origin.These scripts analyse the raw read libraries and identify a ~290kb bacterial region in GRC2, which may have evolved through HGT with endosymbiotic _Rickettsia_ 
 
-First, using 01_align_raw_reads_to_assembly.sh, we run minimap2 to index and then re-map the raw, HiFi long-reads back to the _B coprophila_ genome.
+First, using `01_align_raw_reads_to_assembly.sh`, we run minimap2 to index and then re-map the raw, HiFi long-reads back to the _B coprophila_ genome.
 ```
 minimap2 -d idBraCopr2.1.primary.masked.mmi idBraCopr2.1.primary.masked.fa
 minimap2 -ax map-pb idBraCopr2.1.primary.masked.mmi ERR12736861.fastq.gz > ERR12736861.sam
@@ -12,7 +12,7 @@ samtools view -@ 16 -bS ERR12736861.sam | samtools sort -@ 16 -o ERR12736861.sor
 samtools index ERR12736861.sorted.bam
 rm ERR12736861.sam
 ```
-We next use 02_BLAST_flanking_genes.sh to BLAST a large subset of gene (g19064-g19168), which flank this HGT region, to better understand which genes are eukaryotic and which are bacterial 
+We next use `02_BLAST_flanking_genes.sh` to BLAST a large subset of gene (g19064-g19168), which flank this HGT region, to better understand which genes are eukaryotic and which are bacterial. 
 ```
 blastp \
 -query /mnt/loki/ross/flies/sciaridae/GRCs/pacbio_long_reads/outputs/flanking_gene_transcripts.fasta \
@@ -22,7 +22,7 @@ blastp \
 -max_target_seqs 5 \
 -out /mnt/loki/ross/flies/sciaridae/GRCs/pacbio_long_reads/outputs/flanking_genes_BLAST_output.tsv
 ```
-We also use 03_align_Rickettsia_assembly.sh to align the _Rickettsia_ genome to the full _B. coprophila_ reference genome using minimiap2
+We also use `03_align_Rickettsia_assembly.sh` to align the _Rickettsia_ genome to the full _B. coprophila_ reference genome using minimiap2
 ```
 minimap2 -ax asm5 idBraCopr2.1.primary.masked.fa Rickettsiaceae.finalassembly.fa > Bcop_Rickettsia.sam
 
@@ -30,7 +30,7 @@ echo "Converting to BAM, sorting, and indexing..."
 samtools view -bS Bcop_Rickettsia.sam | samtools sort -o Bcop_Rickettsia.sorted.bam
 samtools index Bcop_Rickettsia.sorted.bam
 ```
-04_FastGA.sh is also used to run FASTGA to generate a PAF alignment file between the two genomes (see /outputs/grc2_vs_rickettsia_1to1.1aln.paf)
+Then `04_FastGA.sh` is  used to run FASTGA to generate a PAF alignment file between the two genomes (see /outputs/grc2_vs_rickettsia_1to1.1aln.paf)
 ```
 # Run FastGA (produce ALN file for plotting)
 FastGA \
