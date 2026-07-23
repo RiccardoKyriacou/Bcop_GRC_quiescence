@@ -71,3 +71,11 @@ Finally, we can pass the StringTie outputs directly to our custom script simply 
 python3 02_get_TPM_values.py -t .
 ```
 Outputs from 02_get_TPM_values.py can be found in /outputs/
+
+| Output file | Description |
+|-------------|-------------|
+| `combined_TPM_only.tsv` | Full table showing TPMs all genes in each library |
+| `gene_overlap_0-4h_TPM.tsv` | All GRC-linked genes with TPM > 0 in 0-4h embryos libraries |
+| `gene_overlap_4-8h_TPM.tsv` | All GRC-linked genes with TPM > 0 in 4-8h embryos libraries |
+| `gene_overlap_late-larva-early-pupa_TPM.tsv` | All GRC-linked genes with TPM > 0 in late-larva/early pupae libraries |
+| `gene_overlap_adult_TPM.tsv` | All GRC-linked genes with TPM > 0 in adult libraries |
