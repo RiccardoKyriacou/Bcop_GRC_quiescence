@@ -6,7 +6,7 @@ import os
 
 '''
 This script
-1) Using gene ID's parses out the gene sequences from B_cor GRC genome
+1) Using gene ID's parses out the gene sequences from B_cop GRC genome
 2) Outputs three FASTA files for GRC genes expressed in soma, germ, and both
 3) Parses out all core genes from annotated B_cop genome
 4) Produces combined fasta file contining all core chromosome genes
