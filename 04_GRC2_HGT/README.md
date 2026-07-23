@@ -177,5 +177,3 @@ convert to years, multiply by the reported _B. coprophila_ generation time of
 
 $$T_{\text{years}} = T_{\text{generations}} \times \frac{\text{generation time (days)}}{365}$$
 
-
-
