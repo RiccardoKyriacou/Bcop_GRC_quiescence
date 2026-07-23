@@ -21,10 +21,20 @@ done
 ```
 Then we can run another custom python script `03_get_intergenic_TPM.py` in the same directory where we ran StringTie to generate a combined TPM file 
 ```
-pyhton3 03_get_intergenic_TPM.py -t . 
+python3 03_get_intergenic_TPM.py -t . 
 ```
-Finally, we can run the R script `04_TPM_cutoff_intergenic_deconvolution.R` on the ouput of 
-```
-04_TPM_cutoff_intergenic_deconvolution.R
-```
+Finally, we can run the R script `04_TPM_cutoff_intergenic_deconvolution.R`. This script classifies genes as expressed on not expressed. See paper methods and Supplementary materials for detailed method
+
+> **Note** This script requires both 
+> `Bcop_GRC_quiescence/01_RNAseq_mapping/outputs/combined_TPM_only.tsv` as well as
+> `Bcop_GRC_quiescence/02_intergenic_TPM/outputs/combined_intergenic_TPM.tsv`
+
 This visualises and performs statistics to generate a TPM cutoff value for expression, based on this intergenic mapping rate. The final output is _TPM_genes.tsv_ 
+
+| Output file | Description |
+|-------------|-------------|
+| `TPM_genes.tsv` | Final output classifying all _B. coprophila_ genes as either Expressed on Not Expressed based |
+| `gene_overlap_0-4h_TPM.tsv` | All GRC-linked genes with TPM > 0 in 0-4h embryos libraries |
+| `gene_overlap_4-8h_TPM.tsv` | All GRC-linked genes with TPM > 0 in 4-8h embryos libraries |
+| `gene_overlap_late-larva-early-pupa_TPM.tsv` | All GRC-linked genes with TPM > 0 in late-larva/early pupae libraries |
+| `gene_overlap_adult_TPM.tsv` | All GRC-linked genes with TPM > 0 in adult libraries |
