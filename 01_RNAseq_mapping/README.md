@@ -74,7 +74,7 @@ Outputs from 02_get_TPM_values.py can be found in /outputs/
 
 | Output file | Description |
 |-------------|-------------|
-| `combined_TPM_only.tsv` | Full table showing TPMs all genes in each library |
+| `combined_TPM_only.tsv` | Full table showing TPMs for all genes in each library |
 | `gene_overlap_0-4h_TPM.tsv` | All GRC-linked genes with TPM > 0 in 0-4h embryos libraries |
 | `gene_overlap_4-8h_TPM.tsv` | All GRC-linked genes with TPM > 0 in 4-8h embryos libraries |
 | `gene_overlap_late-larva-early-pupa_TPM.tsv` | All GRC-linked genes with TPM > 0 in late-larva/early pupae libraries |
