@@ -11,7 +11,7 @@ First, loading the _TPM_genes.tsv_ (Bcop_GRC_quiescence/02_intergenic_TPM/output
 ```
 01_classify_GRC_expressed_genes.R 
 ```
-This give us the following useful output tables:
+This give us the following useful output tables (03_expressed_GRC_genes/outputs/expressed_GRC_gene_tables):
 1. _Expressed_GRC_genes.tsv_ (full table of all genes considered expressed)
 2. _Expressed_GRC_genes_summary.tsv_ (summarised table)
 3. _Corrected_expressed_GRC_genes.tsv_ table (whereby false positive genes with significant smaitc mismapping have been removed)
