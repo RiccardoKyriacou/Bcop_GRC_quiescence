@@ -14,7 +14,7 @@
 ---
 
 > **Preprint:** [bioRxiv 2025.12.11.693641](https://www.biorxiv.org/content/10.64898/2025.12.11.693641v1)  
-> **Note:** This repository accompanies the **revised manuscript**. Code associated with the original preprint is archived separately at [GRC_transcription](https://github.com/RiccardoKyriacou/GRC_transcription).
+> **Note:** This repository accompanies **a manuscript currently under revision**. Code associated with the original preprint is archived separately at [GRC_transcription](https://github.com/RiccardoKyriacou/GRC_transcription).
 
 ---
 
