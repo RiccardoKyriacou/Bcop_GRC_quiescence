@@ -46,7 +46,7 @@ def parse_gff(genome_fasta, gff_file, expressed_GRC_gene_lst):
             end = int(columns[4])  # End position
             strand = columns[6]  # Strand (+ or -)
 
-            # Only consider exons
+            # Only consider gene
             if feature_type == "gene":
                 # Extract the parent gene ID
                 gene_ID = columns[8].split("=")[1].split(";")[0]  # Parse ID
