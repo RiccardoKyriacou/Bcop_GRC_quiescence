@@ -20,4 +20,8 @@ Then we can run another custom python script in the same directory where we ran 
 ```
 pyhton3 03_get_intergenic_TPM.py -t . 
 ```
-Finally, the R script 04_intergenic_TPM_deconvolution.R visualises and performs statistics to generate a TPM cutoff value for expression, based on this intergenic mapping rate
+Finally, we can run the R script 04_TPM_cutoff_intergenic_deconvolution.R on the ouput of 
+```
+04_TPM_cutoff_intergenic_deconvolution.R
+```
+This visualises and performs statistics to generate a TPM cutoff value for expression, based on this intergenic mapping rate. The final output is _TPM_genes.tsv_ 
