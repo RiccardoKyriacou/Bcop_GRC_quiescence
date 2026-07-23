@@ -6,7 +6,7 @@ python3 01_get_intergenic_GFF3.py -g ../../Annotations/bcop_core_GRC.gff3 --min_
 ```
 Output (intergenic GFF and GTF) from 01_get_intergenic_GFF3.py can be fouind in /outputs/ 
 
-Then we can use 02_intergenic_TPM.sh, which runs StringTie on the uniquley mapped BAM files (generated in step 01), this time providing the intergenic gtf to calculate intergenic TPMs
+Then we can use `02_intergenic_TPM.sh`, which runs StringTie on the uniquley mapped BAM files (generated in step 01), this time providing the intergenic gtf to calculate intergenic TPMs
 ```
 for file in $(ls *_uniquely_mapped.bam)
 do
@@ -16,11 +16,11 @@ do
     stringtie "$file" -p 16 -o "$output_gtf" -G bcop_core_GRC.intergenic.gtf
 done
 ```
-Then we can run another custom python script in the same directory where we ran StringTie to generate a combined TPM file 
+Then we can run another custom python script `03_get_intergenic_TPM.py` in the same directory where we ran StringTie to generate a combined TPM file 
 ```
 pyhton3 03_get_intergenic_TPM.py -t . 
 ```
-Finally, we can run the R script 04_TPM_cutoff_intergenic_deconvolution.R on the ouput of 
+Finally, we can run the R script `04_TPM_cutoff_intergenic_deconvolution.R` on the ouput of 
 ```
 04_TPM_cutoff_intergenic_deconvolution.R
 ```
