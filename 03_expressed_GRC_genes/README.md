@@ -141,34 +141,6 @@ Outputs are saved to `outputs/GRC_v_Core_BLAST/`.
 
 ---
 
-### Step 4 — Generate BLAST summary table and flag high-similarity core paralogues
-
-BLAST results from Step 3 are passed through a custom Python script to generate a summary 
-table of expressed GRC-linked genes alongside their best-hit core chromosome paralogue. 
-A similarity score (% identity × % coverage) is calculated for each hit. Genes with a 
-score > 70 are flagged as having a highly similar core paralogue and are excluded from 
-the final confident set, as core chromosome reads could plausibly misalign to these 
-GRC loci.
-
-```bash
-python 04_get_BLAST_table.py \
-    -t outputs/GRC_classification_outputs/Corrected_expressed_GRC_genes.tsv \
-    -c outputs/GRC_v_Core_BLAST/GRC_v_Core_gene_BLAST_output.tsv \
-    -g outputs/GRC_v_Core_BLAST/GRC_v_Core_genome_BLAST_output.tsv
-```
-
-| Argument | Description |
-|----------|-------------|
-| `-t` | Path to `Corrected_expressed_GRC_genes.tsv` from Step 1 |
-| `-c` | Path to GRC vs. core gene BLAST output from Step 3a |
-| `-g` | Path to GRC vs. core genome BLAST output from Step 3b |
-
-| Output | Description |
-|--------|-------------|
-| `outputs/GRC_BLAST_table.tsv` | Table of expressed GRC genes with best-hit core paralogue similarity scores |
-
----
-
 ### Step 5 — Extract and translate spliced CDS sequences to protein
 
 Analysis now focuses on the confidently expressed GRC-linked genes. To perform 
