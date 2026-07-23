@@ -24,7 +24,7 @@ This repository provides scripts, analyses, and outputs for RNA-seq mapping, int
 
 ### Dependencies
 
-#### Command-line tools
+#### Command-line Tools
 
 | Tool | Version | Used in |
 |------|---------|---------|
@@ -38,7 +38,7 @@ This repository provides scripts, analyses, and outputs for RNA-seq mapping, int
 | [minimap2](https://github.com/lh3/minimap2) | 2.28-r1209 | `04_GRC2_HGT` |
 | [FASTGA](https://github.com/thegenemyers/FASTGA) | 1.1 | `04_GRC2_HGT` |
 
-#### R packages
+#### R Packages
 
 | Package | Used in |
 |---------|---------|
@@ -56,98 +56,34 @@ All Python scripts are written for **Python 3**.
 | Directory | Description |
 |-----------|-------------|
 | `01_RNAseq_Mapping` | Scripts to trim, quality-check, align RNA-seq reads to the reference _B. coprophila_ genome (GCA_965233685.1) using STAR, filter multi-mapped reads with samtools, and calculate TPM values with StringTie. Covers 42 libraries across four developmental stages (0–4h embryo, 4–8h embryo, late larva/early pupa, adult) in both germline and somatic libraries. |
-| `02_Intergenic_mapping` | Scripts to generate intergenic GFF files (regions ≥500 bp from any annotated gene, ≥1 kb in length), map reads to intergenic regions, quantify TPM values, and apply a Gaussian mixture model (mclust) to estimate the background mismapping threshold (MITT ~0.55 TPM). |
+| `02_Intergenic_mapping` | Scripts to generate intergenic GFF files (regions ≥500 bp from any annotated gene, ≥1 kb in length), quantify intergenic TPM values, and apply a Gaussian mixture model (mclust) to estimate the background mismapping threshold (MITT ~0.55 TPM). |
 | `03_Expressed_GRC_genes` | Scripts to identify confidently expressed GRC-linked genes above the active expression threshold (MATT), BLAST GRC transcripts against the core genome to flag high-similarity paralogues, and perform protein-level homology analysis against NCBI NR (BLASTp), Repbase, and InterProScan. Also includes Alien Index calculations to infer cecidomyiid vs. sciarid ancestry of expressed loci. |
-| `04_GRC2_HGT` | Scripts to re-map PacBio long reads to the _B. coprophila_ assembly to validate the ~290 kb Rickettsiaceae-derived HGT region on GRC2, calculate GC content across the region, align GRC2 against the co-assembled Rickettsiaceae genome (FASTGA), and visualise synteny. |
+| `04_GRC2_HGT` | Scripts to re-map PacBio long reads to the _B. coprophila_ assembly to validate the ~290 kb Rickettsiaceae-derived HGT region on GRC2, calculate GC content across the region in a sliding window, align GRC2 against the co-assembled Rickettsiaceae genome using FASTGA, and visualise synteny. |
 | `05_Urban_et_al_re-analysis` | Scripts to download, align, and quantify pooled embryo RNA-seq data from Urban et al. (2021; BioProject PRJNA291918) spanning 2h–2 days post-fertilisation, to assess GRC transcription across and after zygotic genome activation. |
 | `figures` | R scripts and outputs used to generate main paper Figures 2, 3, and 4. |
 | `supplementary_materials` | R scripts and outputs used to generate supplementary figures and perform associated statistics. |
 
 ---
 
-### Directory Structure
+### Data Availability
 
-```text
-Bcop_GRC_quiescence/
-├── 01_RNAseq_Mapping/
-│   ├── 01_STAR_TPM_Nmax2.sh
-│   ├── 02_get_TPM_values.py
-│   └── outputs/
-│       ├── combined_TPM_only.tsv
-│       ├── gene_overlap_0-4h_TPM.tsv
-│       ├── gene_overlap_4-8h_TPM.tsv
-│       ├── gene_overlap_adult_TPM.tsv
-│       └── gene_overlap_late-larva-early-pupa_TPM.tsv
-├── 02_Intergenic_mapping/
-│   ├── 01_get_intergenic_GFF3.py
-│   ├── 02_intergenic_TPM.sh
-│   ├── 03_get_intergenic_TPM.py
-│   ├── 04_intergenic_TPM_deconvolution.R
-│   └── outputs/
-│       ├── bcop_core_GRC.intergenic.gff3
-│       ├── bcop_core_GRC.intergenic.gtf
-│       └── combined_intergenic_TPM.tsv
-├── 03_Expressed_GRC_genes/
-│   ├── 01_get_expressed_genes.py
-│   ├── 02_BLAST_GRCgenes.sh
-│   ├── 03_get_BLAST_table.py
-│   ├── 04_get_GRC_proteins.py
-│   ├── 05_BLAST_GRC_proteins.sh
-│   ├── 06_get_interpro_summary.py
-│   ├── 07_repbase_tBLASTn_GRCproteins.sh
-│   └── outputs/
-│       ├── GRC_BLAST_table.tsv
-│       ├── GRC_gene_expression.tsv
-│       ├── GRC_gene_homology_BLAST/
-│       │   ├── GRC_transcripts_BLAST_output.tsv
-│       │   ├── GRCtranscript_repbase_output.tsv
-│       │   └── iprscan5_GRC_genes.tsv
-│       ├── GRC_v_Core_BLAST/
-│       │   ├── GRC_v_Core_gene_BLAST_output.tsv
-│       │   └── GRC_v_Core_genome_BLAST_output.tsv
-│       └── fasta_files/
-│           ├── GRC_genes.nucl.fasta
-│           └── GRC_transcripts.fasta
-├── 04_GRC2_HGT/
-│   ├── 01_align_raw_reads_to_assembly.sh
-│   ├── 02_BLAST_flanking_genes.sh
-│   ├── 03_align_Rickettsia_assembly.sh
-│   ├── 04_FastGA.sh
-│   ├── 05_HGTregion_alignment.R
-│   ├── 06_get_GC_content.py
-│   ├── 07_sliding_window_GC.R
-│   ├── get_kingdom.py
-│   ├── data/
-│   │   ├── 290kb_HGT_only.fasta
-│   │   ├── 651kb_HGT_region.fasta
-│   │   ├── 651kb_length.tsv
-│   │   ├── GC_290kb_HGT_region_only_w2000_n1000.tsv
-│   │   ├── GC_651kb_full_HGT_region_w2000_n1000.tsv
-│   │   ├── GC_SUPER_GRC2_w200000_n100000.tsv
-│   │   ├── Rickettsiaceae_contig_sizes.tsv
-│   │   └── idBraCopr2.1.chrom_sizes.tsv
-│   └── outputs/
-│       └── grc2_vs_rickettsia_1to1.1aln.paf
-├── 05_Urban_et_al_re-analysis/
-│   ├── 01_download_pooled_embryo.sh
-│   ├── 02_STAR_Stringtie.sh
-│   ├── 03_get_TPM_table.py
-│   ├── Average_TPM.R
-│   └── outputs/
-│       ├── combined_TPM_Urban_embryo.tsv
-│       └── combined_TPM_Urban_embryo_GRC.tsv
-├── figures/
-│   ├── Figure_02.R
-│   ├── Figure_03.R
-│   ├── Figure_04.R
-│   └── outputs/
-│       ├── Figure_02.svg
-│       ├── Figure_03.svg
-│       └── Figure_04.svg
-├── supplementary_materials/
-│   ├── Figure_S2.R
-│   ├── Figure_S3.R
-│   └── outputs/
-│       ├── Figure_S2.svg
-│       └── Figure_S3.svg
-└── README.md
+| Data | Accession |
+|------|-----------|
+| Reference _B. coprophila_ genome assembly | [GCA_965233685.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_965233685.1/); SRA: ERS15411730 |
+| Adult RNA-seq libraries (Baird et al. 2025) | BioProject [PRJNA1109384](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1109384) |
+| Embryo RNA-seq libraries (this study) | BioProject [PRJNA1220056](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1220056) |
+| Late larval/early pupal RNA-seq (this study) | Available upon publication |
+| _Rickettsiaceae_ endosymbiont genome | Available upon publication |
+| Urban et al. (2021) pooled embryo RNA-seq | BioProject [PRJNA291918](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA291918) |
+
+---
+
+### Citation
+
+> Kyriacou RG, Herbette M, Baird RB, Monteith KM, Yamashita YM, Ross L, Hodson CN. (2026). Gene-rich fungus gnat germline-restricted chromosomes are largely transcriptionally quiescent. *[Journal]*. DOI: [to be added upon publication]
+
+---
+
+### License
+
+This repository is licensed under the [MIT License](LICENSE).
