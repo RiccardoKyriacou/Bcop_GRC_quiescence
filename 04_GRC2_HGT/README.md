@@ -177,3 +177,11 @@ convert to years, multiply by the reported _B. coprophila_ generation time of
 
 $$T_{\text{years}} = T_{\text{generations}} \times \frac{\text{generation time (days)}}{365}$$
 
+---
+
+### Step 6 — Synteny visualisation
+
+We now can use `06_asynt_visualisation.R` modified from modified from asynt.R (available from: https://github.com/simonhmartin/asynt; Kim et al. 2022) 
+on _grc2_vs_rickettsia_1to1.1aln.paf_ to generate synetny alignemnts 
+
+Full outputs files and dependencies in `outputs/asynt`
