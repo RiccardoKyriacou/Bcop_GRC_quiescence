@@ -33,7 +33,7 @@ misalign to GRC loci and generate false-positive expression signals
 Loading `TPM_genes.tsv` (`Bcop_GRC_quiescence/02_intergenic_TPM/outputs/TPM_genes.tsv`) 
 into R, we run:
 
-```r
+```
 01_classify_GRC_expressed_genes.R
 ```
 
