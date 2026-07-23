@@ -1,16 +1,12 @@
 # Gene-rich fungus gnat germline-restricted chromosomes are largely transcriptionally quiescent
 
-### Overview
+#### _Riccardo G. Kyriacou1,†, Marion Herbette2, Robert B. Baird3, Katy M. Monteith1, Yukiko M. Yamashita3,4, Laura Ross1,†,*, Christina N. Hodson5 *_
 
-#### "Gene-rich fungus gnat germline-restricted chromosomes are largely transcriptionally quiescent".
-
-##### _Riccardo G. Kyriacou1,†, Marion Herbette2, Robert B. Baird3, Katy M. Monteith1, Yukiko M. Yamashita3,4, Laura Ross1,†,*, Christina N. Hodson5 *_
-
-###### 1 Institute of Ecology and Evolution, University of Edinburgh, UK
-###### 2 Laboratory of Biology and Modelling of the Cell, Ecole Normale Supérieure de Lyon, CNRS, Inserm, Université Claude Bernard Lyon 1, Lyon, France
-###### 3 Whitehead Institute for Biomedical Science and Howard Hughes Medical Institute, Cambridge, Massachusetts, USA
-###### 4 Department of Biology, Massachusetts Institute of Technology, Cambridge, MA, USA
-###### 5 University College London, UCL Department of Genetics, Evolution & Environment, UK
+##### 1 Institute of Ecology and Evolution, University of Edinburgh, UK
+##### 2 Laboratory of Biology and Modelling of the Cell, Ecole Normale Supérieure de Lyon, CNRS, Inserm, Université Claude Bernard Lyon 1, Lyon, France
+##### 3 Whitehead Institute for Biomedical Science and Howard Hughes Medical Institute, Cambridge, Massachusetts, USA
+##### 4 Department of Biology, Massachusetts Institute of Technology, Cambridge, MA, USA
+##### 5 University College London, UCL Department of Genetics, Evolution & Environment, UK
 
 ###### *Authors contributed equally
 ###### †Corresponding authors: R.G.Kyriacou@sms.ed.ac.uk, Laura.Ross@ed.ac.uk 
