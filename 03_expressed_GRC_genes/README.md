@@ -28,29 +28,7 @@ misalign to GRC loci and generate false-positive expression signals
 
 ## Scripts
 
-### Step 1 — Classify expressed GRC-linked genes
-
-Loading `TPM_genes.tsv` (`Bcop_GRC_quiescence/02_intergenic_TPM/outputs/TPM_genes.tsv`) 
-into R, we run:
-
-```
-01_classify_GRC_expressed_genes.R
-```
-
-This script applies the expression filtering criteria above across all developmental 
-stages and both sexes. Genes must exceed the TPM threshold in at least 2/3 of replicates 
-per sex per stage. It generates the following output tables saved to 
-`outputs/GRC_classification_outputs/`:
-
-| Output file | Description |
-|-------------|-------------|
-| `Expressed_GRC_genes.tsv` | Full table of all GRC-linked genes meeting the TPM threshold in at least one developmental stage/sex |
-| `Expressed_GRC_genes_summary.tsv` | Summarised table of expressed GRC genes, collapsed across stages |
-| `Corrected_expressed_GRC_genes.tsv` | Final filtered table with genes showing significant somatic library mismapping removed |
-
----
-
-### Step 2 — Extract GRC and core gene nucleotide sequences
+### Step 1 — Extract GRC and core gene nucleotide sequences
 
 Using `Corrected_expressed_GRC_genes.tsv` to define our gene set, we extract nucleotide 
 sequences for both the confidently expressed GRC-linked genes and all annotated core 
@@ -81,7 +59,7 @@ python 02_get_GRC_core_fastas.py \
 
 ---
 
-### Step 3 — BLASTn GRC genes against core chromosomes
+### Step 2 — BLASTn GRC genes against core chromosomes
 
 We perform BLASTn searches of expressed GRC gene sequences against both the annotated 
 core chromosome genes and the full masked core genome. This identifies GRC-linked genes 
@@ -138,6 +116,28 @@ blastn \
 ```
 
 Outputs are saved to `outputs/GRC_v_Core_BLAST/`.
+
+---
+
+### Step 3 — Classify expressed GRC-linked genes
+
+Loading `TPM_genes.tsv` (`Bcop_GRC_quiescence/02_intergenic_TPM/outputs/TPM_genes.tsv`) 
+into R, we run:
+
+```
+01_classify_GRC_expressed_genes.R
+```
+
+This script applies the expression filtering criteria above across all developmental 
+stages and both sexes. Genes must exceed the TPM threshold in at least 2/3 of replicates 
+per sex per stage. It generates the following output tables saved to 
+`outputs/GRC_classification_outputs/`:
+
+| Output file | Description |
+|-------------|-------------|
+| `Expressed_GRC_genes.tsv` | Full table of all GRC-linked genes meeting the TPM threshold in at least one developmental stage/sex |
+| `Expressed_GRC_genes_summary.tsv` | Summarised table of expressed GRC genes, collapsed across stages |
+| `Corrected_expressed_GRC_genes.tsv` | Final filtered table with genes showing significant somatic library mismapping removed |
 
 ---
 
