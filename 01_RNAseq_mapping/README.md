@@ -2,7 +2,7 @@
 
 ## Overview
 
-These scripts initiate our RNA-seq analysis by mapping RNA reads from embryo, larval and adult data and maps it to the refernece _B. coprophila_ gneome and annotation 
+These scripts initiate our RNA-seq analysis by mapping RNA reads from embryo, larval and adult data and maps it to the reference _B. coprophila_ gneome and annotation 
 
 ---
 
