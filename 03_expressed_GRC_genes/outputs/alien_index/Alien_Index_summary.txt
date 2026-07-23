@@ -1,0 +1,13 @@
+qseqid	best_evalue_cecidomyiid	best_bitscore_cecidomyiid	best_hit_cecidomyiid	best_pident_cecidomyiid	best_evalue_sciarid	best_bitscore_sciarid	best_hit_sciarid	best_pident_sciarid	best_evalue_outgroup	best_bitscore_outgroup	best_hit_outgroup	best_pident_outgroup	alien_index	bitscore_diff_cec_minus_sci	outgroup_flag	interpretation
+g18444.t1_insect-like	2.42E-23	95.9	g5685.t1	43.312	0.058	33.5	s146.t1	34.694	1.82E-35	130	ref|XP_061499348.1|	46.784	49.22837733	62.4	check_conservation	cecidomyiid-like
+g13694.t2_insect-like	0.17	33.5	g12777.t5	25	2.9	29.3	s12222.t1	28.155	10	0			2.836667579	4.2	ok	ambiguous
+g13362.t1_insect-like	0.15	33.9	g5992.t1	39.394	0.23	32.7	s8154.t1	42.424	9.4	29.3	ref|XP_061510806.1|	26.115	0.427444015	1.2	check_conservation	ambiguous
+g15244.t1_insect-like	1.6	30	g514.t1	30.137	0.56	30.8	s15342.t1	21.622	1	31.2	ref|XP_061511919.1|	28.571	-1.049822124	-0.8	check_conservation	ambiguous
+g13694.t1_insect-like	0.27	33.5	g12777.t5	25	0.000559	41.6	s7.t1	27.731	10	0			-6.180027765	-8.1	ok	ambiguous
+g491.t1_TE-like	2.04E-09	55.5	g12180.t1	30.625	3.23E-56	191	s9981.t1	46.032	0.000702	41.6	ref|XP_061512551.1|	22.156	-107.761967	-135.5	ok	sciarid-like
+g17107.t1_TE-like	1.60E-22	100	g9616.t1	28.664	1.37E-70	244	s6244.t1	40.212	6.03E-13	71.6	ref|XP_061496819.1|	22.222	-110.6792774	-144	ok	sciarid-like
+g6396.t1_insect-like	7.51E-85	271	g7617.t1	31.835	5.70E-168	484	s14141.t1	48.723	1.98E-33	134	ref|XP_061511729.1|	26.419	-191.390332	-213	ok	sciarid-like
+g13363.t1_TE-like	2.3	31.2	g1810.t1	31.884	1.53E-123	375	s4667.t1	42.888	3.2	31.6	ref|XP_061519431.1|	33.898	-283.6256078	-343.8	ok	sciarid-like
+g13363.t2_TE-like	1.5	31.6	g1810.t1	31.884	9.31E-124	375	s4667.t1	42.888	2.8	31.6	ref|XP_061519432.1|	33.898	-283.6949275	-343.4	ok	sciarid-like
+g7958.t1_unclear_homology	1.56E-06	48.1	g12390.t1	25.346	2.40E-140	398	s6465.t1	78.632	0.035	36.2	ref|XP_061514177.1|	22.222	-308.1156195	-349.9	ok	sciarid-like
+g596.t1_TE-like	0.56	33.5	g5714.t1	32.787	0	648	s8893.t1	67.692	1.8	32.3	ref|XP_061509642.1|	29.167	-459.9372001	-614.5	ok	sciarid-like
