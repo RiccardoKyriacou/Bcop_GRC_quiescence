@@ -1,4 +1,4 @@
-# 5 Re-analysis of Urban et al. (2021) pooled embryo data
+# 5. Re-analysis of Urban et al. (2021) pooled embryo data
 
 We first download the pooled embryo data using the script 01_download_pooled_embryo.sh
 
