@@ -1,6 +1,6 @@
 # 5. Re-analysis of Urban et al. (2021) pooled embryo data
 
-We first download the pooled embryo data using the script 01_download_pooled_embryo.sh
+We first download the pooled embryo data using the script `01_download_pooled_embryo.sh`
 
 ```
 srx_list=(SRX6716708 SRX6716709 SRX6716710 SRX6716711 SRX6716704 SRX6716705)
@@ -26,7 +26,7 @@ for srx in "${srx_list[@]}"; do
 done
 ```
 
-We then use the script 02_STAR_Stringtie.sh to first trim the reads using fastp
+We then use the script `02_STAR_Stringtie.sh` to first trim the reads using fastp
 ```
 do
 	base=$(basename $file "_1.fq.gz")
@@ -36,7 +36,7 @@ do
 done
 ```
 
-Then we use STAR to index the reference _B. coprophila_ genome (providing annotation) and map the RNA-reads. We use the same mapping perameters as in /01_RNAseq_Mapping/01_STAR_TPM_Nmax2.
+Then we use STAR to index the reference _B. coprophila_ genome (providing annotation) and map the RNA-reads. We use the same mapping perameters as in `/01_RNAseq_Mapping/01_STAR_TPM_Nmax2`
 ```
 STAR \
 --runThreadN 16 \
