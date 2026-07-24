@@ -2,9 +2,7 @@ library(tidyverse)
 library(patchwork)
 
 # Read table
-df <- read.delim(
-  "C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\03_expressed_GRC_genes\\outputs\\alien_index\\Alien_Index_summary.txt"
-)
+df <- read.delim("Alien_Index_summary.txt")
 
 # Clean gene names
 df$gene <- gsub(
