@@ -135,8 +135,3 @@ final_plot <- ((p0 | p1) + plot_layout(widths = c(1.5, 1))) /
   theme(plot.tag = element_text(size = 14, face = "bold"))
 
 final_plot
-
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\Figures\\supplementary_figures")
-home <- getwd()
-#ggsave("S4_sex_biased.svg", final_plot, width = 13, height = 12)
-
