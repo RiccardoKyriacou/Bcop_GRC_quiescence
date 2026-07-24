@@ -25,6 +25,7 @@ for srx in "${srx_list[@]}"; do
       done
 done
 ```
+
 We then use the script 02_STAR_Stringtie.sh to first trim the reads using fastp
 ```
 do
@@ -34,6 +35,7 @@ do
   	rm ${base}_1.fq.gz ${base}_2.fq.gz
 done
 ```
+
 Then we use STAR to index the reference _B. coprophila_ genome (providing annotation) and map the RNA-reads. We use the same mapping perameters as in /01_RNAseq_Mapping/01_STAR_TPM_Nmax2.
 ```
 STAR \
@@ -61,6 +63,7 @@ do
         --genomeDir idBraCopr2.1.primary.masked.fa.STAR
 done
 ```
+
 We then filter for only uniquely mapping reads using samtools and run StringTie
 ```
 for file in $(ls *.bam)
@@ -82,10 +85,14 @@ do
     stringtie -o $output_file -G idBraCopr2.1.primary.masked_core_and_grc_braker3.gff3  $file
 done
 ```
+
 Finally, we can pass the StringTie outputs directly to our custom script simply by running
 ```
+
 python3 03_get_TPM_table.py -t .
 ```
+
+This script produces the following outputs availible in `/05_Urban_et_al_re-analysis/outputs`
 
 | Output file | Description |
 |-------------|-------------|
