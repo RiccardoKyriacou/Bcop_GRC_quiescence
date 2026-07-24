@@ -1,7 +1,7 @@
 
 library(tidyverse)
 
-file <- "C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\03_expressed_GRC_genes\\outputs\\Bimp_Ling_BLAST\\Bimp_ling_combined_blast_table.tsv"
+file <- "outputs\\Bimp_Ling_BLAST\\Bimp_ling_combined_blast_table.tsv"
 
 blast <- read.delim(file, header = FALSE)
 
