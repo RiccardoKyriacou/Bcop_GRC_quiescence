@@ -19,7 +19,7 @@ python3 01_get_intergenic_GFF3.py \
 
 ### Step 2 — Run StringTie 
 
-Then we can use `02_intergenic_TPM.sh`, which runs StringTie on the uniquley mapped BAM files (generated in step 01), this time providing the intergenic gtf to calculate intergenic TPMs
+We can use `02_intergenic_TPM.sh`, which runs StringTie on the uniquley mapped BAM files (generated in step 01), this time providing the intergenic gtf to calculate intergenic TPMs
 ```
 for file in $(ls *_uniquely_mapped.bam)
 do
@@ -29,6 +29,7 @@ do
     stringtie "$file" -p 16 -o "$output_gtf" -G bcop_core_GRC.intergenic.gtf
 done
 ```
+
 Then we can run another custom python script `03_get_intergenic_TPM.py` in the same directory where we ran StringTie to generate a combined TPM file 
 ```
 python3 03_get_intergenic_TPM.py -t . 
@@ -36,7 +37,7 @@ python3 03_get_intergenic_TPM.py -t .
 
 | Output file | Description |
 |-------------|-------------|
-| `combined_intergenic_TPM.tsv` | Combined StringTie output for intergenic regions |
+| `combined_intergenic_TPM.tsv` | Combined StringTie output for intergenic regions generated from `03_get_intergenic_TPM.py` |
 
 ---
 
