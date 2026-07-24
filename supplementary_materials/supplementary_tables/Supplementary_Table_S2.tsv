@@ -1,0 +1,9 @@
+GRC_Gene_ID	GRC_Scaffold	Average_TPM_across_libraries	Notes
+g6396	SUPER_GRC1	11.73	Only gene considered confidently GRC-expressed in Urban et al. (2021) re-analysis; no somatic mismapping detected and no highly similar core paralogue
+g13065	SUPER_GRC2	5.06	
+g14257	SUPER_GRC2	3.00	
+g14637	SUPER_GRC2	15.60	
+g16029	SUPER_GRC2	5.87	
+g17249	SUPER_GRC2	5.23	
+g18526	SUPER_GRC2	2.68	
+g19121	SUPER_GRC2	49.95	Resides in bacterial-derived HGT region on GRC2; elevated expression likely reflects bacterial RNA contamination
