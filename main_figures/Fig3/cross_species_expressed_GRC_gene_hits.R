@@ -126,8 +126,5 @@ p4 <- ggplot(
   theme_classic(base_size = 14)
 p4
 
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\Figures\\unedited")
-home <- getwd()
-home
 ggsave("Cross_species_hits.svg", p4, width = 5, height = 4)
 
