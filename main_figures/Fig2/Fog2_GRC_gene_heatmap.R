@@ -248,7 +248,3 @@ p_final_grouped
 # STEP 9: Save
 # ======================================================================================
 
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions")
-home <- getwd()
-#ggsave("GRC_heatmap_sex_split.svg", p_final_grouped,
-       #width = 14, height = max(8, length(row_order) * 0.3 + 3))
