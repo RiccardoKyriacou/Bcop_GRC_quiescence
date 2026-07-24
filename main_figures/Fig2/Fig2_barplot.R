@@ -37,7 +37,7 @@ genes_per_scaffold <- gtf %>%
 genes_per_scaffold
 
 # Load TPM + expression status for all genes 
-TPM_genes <- read_tsv("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\02_intergenic_TPM\\TPM_genes.tsv")
+TPM_genes <- read_tsv("Revisions\\02_intergenic_TPM\\TPM_genes.tsv")
 TPM_genes 
 
 # Apply transcription threshold  + reproducibility filter (2/3 expression across libraries per sex) across all chromosomes
