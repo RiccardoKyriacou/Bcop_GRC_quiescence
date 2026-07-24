@@ -264,4 +264,142 @@ python 07_get_interpro_summary.py
 | `outputs/GRC_gene_homology_BLAST/iprscan5_GRC_genes.tsv` | InterProScan domain predictions and protein family classifications for expressed GRC protein sequences |
 
 > ***Note*** Screenshots of Interpro domains included, these were used to produce Figure 3 Panel B `Bcop_GRC_quiescence/main_figures/Fig3`
+
 ---
+
+### Step 8 — BLASTn of expressed GRC-linked genes against *B. impatiens* and *L. ingenua*
+
+To assess cross-species conservation of confidently expressed GRC-linked loci, we perform 
+BLASTn searches of expressed GRC nucleotide sequences against the full genome assemblies 
+(GRCs and core chromosomes) of two other fungus gnat species with assembled GRC genomes: 
+*Bradysia impatiens* and *Lycoriella ingenua* (Hodson et al. 2026).
+
+```bash
+08_Bimp_Ling_BLAST.sh
+```
+
+Nucleotide sequences from `outputs/fasta_files/GRC_genes.nucl.fasta` are queried against 
+both species' assemblies. Only hits with >80% sequence identity and high query coverage 
+are retained.
+
+| Output | Description |
+|--------|-------------|
+| `outputs/Bimp_Ling_BLAST/` | BLASTn results for expressed GRC-linked loci against *B. impatiens* and *L. ingenua* assemblies |
+
+> ***Note:*** Cross-species BLASTn results are used to produce Figure 3C. Results reveal 
+> differing patterns of conservation: TE-like loci (e.g., Kolobok-like g13363, BEL-like 
+> g17107) showed strong GRC homology in *B. impatiens*, the Transib-like locus (g596) was 
+> detected on *B. impatiens* chromosome II, and the putative transposase-like locus (g7958) 
+> showed homology to both the X chromosome and GRC1 of *L. ingenua*. In contrast, no GRC 
+> homology was detected for insect-like genes in either species, though g18444 produced 
+> strong hits to the core X chromosome of both *B. impatiens* and *L. ingenua*.
+
+---
+
+### Step 9 — Alien Index calculation to infer GRC gene ancestry
+
+To investigate whether confidently expressed GRC-linked transcripts are more likely derived 
+from an ancient hybridisation with a Cecidomyiidae ancestor or from subsequent duplication 
+from the *B. coprophila* core genome, we calculate an Alien Index (AI) for each transcript. 
+This step uses the BLASTp outputs generated in **Step 10** and should therefore be run 
+after Step 10.
+
+The Alien Index (Rancurel et al. 2017) is defined as:
+
+$$AI = \ln(E_{\text{sciarid}} + 1 \times 10^{-200}) - \ln(E_{\text{cecidomyiid}} + 1 \times 10^{-200})$$
+
+Higher AI values indicate greater similarity to cecidomyiid proteins (cecidomyiid-like 
+ancestry), while lower values indicate greater similarity to the sciarid core proteome 
+(likely derived from the *B. coprophila* core genome). Transcripts are classified as 
+cecidomyiid-like (AI > 10), sciarid-like (AI < −10), or ambiguous.
+
+> ***Note:*** This step requires the BLASTp outputs from **Step 10** 
+> (`GRC_vs_SciaridCore.tsv`, `GRC_vs_Cecidomyiid.tsv`, `GRC_vs_Outgroup.tsv`). 
+> Run Step 10 before executing Step 9.
+
+```bash
+python 09_alien_index.py
+```
+
+AI values are then further processed and visualised using the accompanying R script:
+
+```r
+# Run in outputs/alien_index/
+source("alien_index.R")
+```
+
+| Output | Description |
+|--------|-------------|
+| `outputs/alien_index/Expressed_Genes_Alien_Index_summary.csv` | Alien Index values for all confidently expressed GRC-linked transcripts |
+| `outputs/alien_index/Alien_Index_summary.txt` | Summary of Alien Index classification results |
+| `outputs/alien_index/Alien_Index_summary_Supplementry_version.xlsx` | Supplementary-formatted version of the Alien Index summary table |
+
+> ***Note:*** Results are used to produce Figure 3E. All four expressed TE-like transcripts 
+> showed greater relative similarity to the *B. coprophila* core proteome than to cecidomyiid 
+> or mosquito counterparts, suggesting these loci originated via translocation from the sciarid 
+> core genome onto the GRC. Ancestry of insect-like transcripts was generally less resolved, 
+> with most showing low similarity to all three proteomes.
+
+---
+
+### Step 10 — Three-way BLASTp: sciarid vs. cecidomyiid vs. mosquito outgroup
+
+To generate the BLASTp inputs required for the Alien Index calculation in Step 9, we perform 
+BLASTp searches of expressed GRC protein sequences against three reference proteomes:
+
+- **Sciarid core**: *B. coprophila* core chromosome (non-GRC) proteome
+- **Cecidomyiid**: *Aphidoletes aphidimyza* proteome — the closest phylogenetic neighbour 
+  to cecidomyiid-derived GRC-linked genes (Hodson et al. 2026)
+- **Dipteran outgroup**: *Anopheles gambiae* proteome (GCF_943734735.2)
+
+```bash
+10_sciarid_v_cecidomyiid_v_mosquito_BLASTp.sh
+```
+
+For each search, the best hit (e-value ≤ 10, `max_target_seqs = 10`) is retained.
+
+| Output | Description |
+|--------|-------------|
+| `outputs/alien_index/GRC_vs_SciaridCore.tsv` | BLASTp hits of expressed GRC proteins against the *B. coprophila* core proteome |
+| `outputs/alien_index/GRC_vs_Cecidomyiid.tsv` | BLASTp hits of expressed GRC proteins against the *A. aphidimyza* proteome |
+| `outputs/alien_index/GRC_vs_Outgroup.tsv` | BLASTp hits of expressed GRC proteins against the *A. gambiae* proteome |
+
+> ***Note:*** Transcripts whose outgroup (*A. gambiae*) bitscore exceeds 80% of their best 
+> within-clade bitscore are flagged as potentially reflecting broad dipteran conservation 
+> rather than lineage-specific ancestry, reducing confidence in ancestral inference. For 
+> example, g18444 shows comparable bitscores against both the cecidomyiid and mosquito 
+> proteomes, suggesting its apparent cecidomyiid affinity may reflect broad sequence 
+> conservation across Diptera rather than a GRC origin through hybridisation.
+
+---
+
+### Step 11 — Validate Alien Index using the complete GRC proteome
+
+To validate the Alien Index as a reliable method for inferring GRC-linked gene ancestry, 
+we extend the analysis from the 10 confidently expressed loci to the entire annotated 
+*B. coprophila* GRC proteome (22,133 transcripts). This tests whether the approach 
+recovers the expected mixed cecidomyiid/sciarid origin of GRC gene content documented 
+in Hodson et al. (2026).
+
+```bash
+11_complete_GRC_AI.sh
+```
+
+Results are processed using:
+
+```r
+# Run in outputs/alien_index/
+source("complete_GRC_proteome_alien_index.R")
+```
+
+| Output | Description |
+|--------|-------------|
+| `outputs/alien_index/Full_GRC_proteome_AI_summary.csv` | Alien Index values for all 22,133 annotated *B. coprophila* GRC proteome transcripts |
+
+> ***Note:*** Of the 22,133 GRC transcripts, 8,090 (36.6%) were classified as 
+> cecidomyiid-like (AI > 10), 7,373 (33.3%) as sciarid-like (AI < −10), and 6,670 (30.1%) 
+> as ambiguous. These proportions are broadly consistent with the mixed phylogenetic origin 
+> of GRC gene content identified by Hodson et al. (2026) using BUSCO-based ancestry 
+> inference, validating the Alien Index approach before application to the smaller set of 
+> confidently expressed loci (Supplementary Figure S11).
+```
