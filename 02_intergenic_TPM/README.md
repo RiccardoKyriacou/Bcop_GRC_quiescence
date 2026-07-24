@@ -41,6 +41,8 @@ Finally, we can run the R script `04_TPM_cutoff_intergenic_deconvolution.R`. Thi
 
 ---
 
+## Outputs summary
+
 | Output file | Description |
 |-------------|-------------|
 | `TPM_genes.tsv` | Main output classifying all _B. coprophila_ genes as either Expressed on Not Expressed. Used in later analyses |
