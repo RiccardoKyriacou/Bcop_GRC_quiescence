@@ -203,7 +203,4 @@ p_final_replicates <- top_row / bottom_row +
   )
 
 p_final_replicates
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions")
-home <- getwd()
-#ggsave("FigS1_GRC_all_replicate_heatmap_unedited.svg", p_final_replicates, width = 14, height = max(8, nrow(heat_mat) * 0.25 + 3))
 
