@@ -172,8 +172,4 @@ combined <- pA + (pB / pC) +
 
 combined
 
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\Figures\\unedited")
-home <- getwd()
-home
-ggsave("Full_GRC_AI_combined.svg", combined, width = 13, height = 8)
 
