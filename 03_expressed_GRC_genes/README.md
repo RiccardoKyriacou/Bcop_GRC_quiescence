@@ -352,8 +352,7 @@ python alien_index.py \
 | `outputs/alien_index/Alien_Index_summary_Supplementry_version.xlsx` | Supplementary-formatted version of the Alien Index summary table |
 
 AI values are then further processed and visualised using the accompanying R script:
-
-`outputs/alien_index/alien_index.R:`
+`outputs/alien_index/alien_index.R`
 
 ---
 
@@ -370,10 +369,8 @@ in Hodson et al. (2026).
 ```
 
 Results are processed using the following script::
+`outputs/alien_index/complete_GRC_proteome_alien_index.R`
 
-```r
-outputs/alien_index/complete_GRC_proteome_alien_index.R
-```
 
 | Output | Description |
 |--------|-------------|
