@@ -172,7 +172,7 @@ p_heat <- ggplot(df_heat_plot, aes(x = group, y = Gene, fill = mean_log2_TPM)) +
 # Alignment score = (Coverage x %Identity) / 100, derived from BLAST search of
 # GRC genes against the core genome. A score of 0 indicates no significant hit;
 # higher scores suggest potential homology to core-genome loci.
-blast_df <- read_tsv("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\03_expressed_GRC_genes\\GRC_BLAST_table.tsv") %>%
+blast_df <- read_tsv("03_expressed_GRC_genes\\GRC_BLAST_table.tsv") %>%
   mutate(
     `%Identity` = replace_na(`%Identity`, 0),
     Coverage    = replace_na(Coverage, 0)
