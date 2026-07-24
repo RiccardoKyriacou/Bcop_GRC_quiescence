@@ -3,7 +3,7 @@
 ###############################################################################
 # We need to import the functions in the asynt.R script.
 # You need to have the Intervals package installed on your system for this to work
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\04_HGT\\asynt")
+setwd("Revisions\\04_HGT\\asynt")
 home <- getwd()
 home
 
