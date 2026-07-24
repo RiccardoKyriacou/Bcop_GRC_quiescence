@@ -1,5 +1,7 @@
 # 2. Mapping reads to intergenic regions 
 
+### Step 1 — Generate integenic GTF file 
+
 First, we can use the following python script to generate intergenic GFF/GTF files, providing the _B. coprophila_ genome annotation (-g), along with metrics to describe the minimum distance from genes and the minimum/maximum length for the intergenic regions. For this study we ran the script like so: 
 ```
 python3 01_get_intergenic_GFF3.py
@@ -8,6 +10,10 @@ python3 01_get_intergenic_GFF3.py
     --max_length 20000
 ```
 Output (intergenic GFF and GTF) from 01_get_intergenic_GFF3.py can be fouind in /outputs/ 
+
+---
+
+### Step 2 — Run StringTie 
 
 Then we can use `02_intergenic_TPM.sh`, which runs StringTie on the uniquley mapped BAM files (generated in step 01), this time providing the intergenic gtf to calculate intergenic TPMs
 ```
@@ -23,6 +29,10 @@ Then we can run another custom python script `03_get_intergenic_TPM.py` in the s
 ```
 python3 03_get_intergenic_TPM.py -t . 
 ```
+
+---
+
+### Step 3 — Intergenic deconvolution and expression threshold classification 
 
 Finally, we can run the R script `04_TPM_cutoff_intergenic_deconvolution.R`. This script classifies genes as expressed on not expressed based on an active TPM threshold (~0.55) which takes into account intergenic mapping rates. See paper methods and Supplementary Materials for detailed method descriptions. The final output is _TPM_genes.tsv_ 
 
