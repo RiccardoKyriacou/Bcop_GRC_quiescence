@@ -60,7 +60,7 @@ All Python scripts are written for **Python 3**.
 | `03_Expressed_GRC_genes` | Scripts to identify confidently expressed GRC-linked genes above the active expression threshold, BLAST GRC transcripts against the core genome to flag high-similarity paralogues, and perform protein-level homology analysis against NCBI NR (BLASTp), Repbase, and InterProScan. Also includes Alien Index calculations to infer cecidomyiid vs. sciarid ancestry of expressed loci. |
 | `04_GRC2_HGT` | Scripts to re-map PacBio long reads to the _B. coprophila_ assembly to validate the ~290 kb Rickettsiaceae-derived HGT region on GRC2, calculate GC content across the region in a sliding window, align GRC2 against the co-assembled Rickettsiaceae genome using FASTGA, and visualise synteny. |
 | `05_Urban_et_al_re-analysis` | Scripts to download, align, and quantify pooled embryo RNA-seq data from Urban et al. (2021; BioProject PRJNA291918) spanning 2h–2 days post-fertilisation, to assess GRC transcription across and after zygotic genome activation. |
-| `figures` | R scripts and outputs used to generate main paper Figures 2, 3, and 4. |
+| `main_figures` | R scripts and outputs used to generate main paper Figures 2, 3, and 4. |
 | `supplementary_figures` | R scripts used to generate supplementary figures and perform associated statistics. |
 | `supplementary_materials` | R scripts used to perform analysis for supplementary materials. |
 
