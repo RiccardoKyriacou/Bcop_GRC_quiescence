@@ -125,8 +125,5 @@ p3 <- p1 + p2 +
 
 p3
 
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\Figures\\unedited")
-home <- getwd()
-home
 #ggsave("Alien_Index_plot.svg", p3, width = 10, height = 4.5)
 
