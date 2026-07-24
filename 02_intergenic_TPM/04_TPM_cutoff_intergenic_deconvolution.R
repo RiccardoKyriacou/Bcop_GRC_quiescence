@@ -9,7 +9,7 @@ library(patchwork)
 ### STEP 1) Load and prepare data ###
 ### ---------------------------------------------------------------------------------------###
 #file.choose()
-TPM_intergenic <- read_tsv("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\02_intergenic_TPM\\outputs\\combined_intergenic_TPM.tsv", 
+TPM_intergenic <- read_tsv("Revisions\\02_intergenic_TPM\\outputs\\combined_intergenic_TPM.tsv", 
                            col_names = FALSE)
 colnames(TPM_intergenic) <- c("Chromosome", "TPM", "Gene", "Species", "Sex", "Tissue", "Stage", "Sample")
 TPM_intergenic$TPM <- as.numeric(TPM_intergenic$TPM)
@@ -22,7 +22,6 @@ TPM_intergenic
 ### ---------------------------------------------------------------------------------------###
 set.seed(33)  # Ensures reproducible EM initialisation
 model <- Mclust(TPM_intergenic$log2_TPM, G = 3)
-#model <- Mclust(TPM_intergenic$log2_TPM)
 summary(model)
 plot(model, what = "BIC")  # Plot BIC values for different component numbers
 # Extract means, standard deviations, and proportions of each component
@@ -108,7 +107,7 @@ sd_ref <- sd(reference_intergenic$log2_TPM, na.rm = TRUE)
 ### STEP 6) Load gene TPM data and compute Z-scores for genes
 ### ---------------------------------------------------------------------------------------###
 # Load gene expression data 
-TPM_genes <- read_tsv("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\01_STAR_TPM\\combined_TPM_only.tsv", 
+TPM_genes <- read_tsv("Revisions\\01_STAR_TPM\\combined_TPM_only.tsv", 
                       col_names = FALSE)
 colnames(TPM_genes) <- c("Chromosome", "TPM", "Gene", "Species", "Sex", "Tissue", "Stage", "Sample")
 TPM_genes$TPM <- as.numeric(TPM_genes$TPM)
@@ -310,7 +309,7 @@ plot_final_bcop <- p_combined + P_cds + p_classified + p_classified_GRC
 
 plot_final_bcop
 
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\02_intergenic_TPM")
+setwd("Revisions\\02_intergenic_TPM")
 home <- getwd()
 home
 #ggsave(plot = plot_final_bcop, filename = file.path(home, "S1_Background_unedited_TPM.svg"), 
