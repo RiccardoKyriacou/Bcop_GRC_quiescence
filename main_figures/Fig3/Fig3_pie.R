@@ -59,7 +59,3 @@ pie <- ggplot(category_counts, aes(ymax = ymax, ymin = ymin, xmax = 1, xmin = 0,
 
 pie
 
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\03_expressed_GRC_genes\\outputs")
-home <- getwd()
-ggsave("GRC_BLAST_pie.svg", pie,
-       width = 14, height = 10)
