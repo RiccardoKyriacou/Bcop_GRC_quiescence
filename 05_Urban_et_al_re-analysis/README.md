@@ -86,6 +86,10 @@ Finally, we can pass the StringTie outputs directly to our custom script simply 
 ```
 python3 03_get_TPM_table.py -t .
 ```
-Outputs from 03_get_TPM_table.py can be found in /outputs/
+
+| Output file | Description |
+|-------------|-------------|
+| `combined_TPM_Urban_embryo.tsv` | Full table showing TPMs for all _B. coprophila_ genes in each library |
+| `combined_TPM_Urban_embryo_GRC.tsv` | Table of TPMs for GRC-linked genes only |
 
 > **_Average_TPM.R_** simply averages the TPM across all the GRC genes in this data set 
