@@ -119,5 +119,3 @@ plot_10 <- ggplot(scaffold_10, aes(x = Position, y = GC_Content)) +
 
 combined_plot <-HGT_region_GC_mean / plot_2 / plot_10  # vertical layout
 combined_plot
-
-
