@@ -3,7 +3,7 @@ library(patchwork)
 
 # Read table
 df <- read.delim(
-  "C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\03_expressed_GRC_genes\\outputs\\alien_index\\Alien_Index_summary.txt"
+  "Revisions\\03_expressed_GRC_genes\\outputs\\alien_index\\Alien_Index_summary.txt"
 )
 
 # Clean gene names
@@ -124,9 +124,4 @@ p3 <- p1 + p2 +
   theme(legend.position = "right")
 
 p3
-
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\Figures\\unedited")
-home <- getwd()
-home
-#ggsave("Alien_Index_plot.svg", p3, width = 10, height = 4.5)
 
