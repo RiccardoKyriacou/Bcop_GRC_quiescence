@@ -1,0 +1,83 @@
+gene_id	scaffold	tissue_category	development_stage	sex	germ/soma	mean_germ_TPM/mean_soma_TPM	Hit_id	Coverage	%Identity	E-Value	Hit_length	Mismatches
+g11713	SUPER_GRC2	germ*	adult	male	3_0	0.5_0.0	s7088	67.782	80.987	0.0	1614.0	173.0
+g12539	SUPER_GRC2	both	adult	female	2_2	19.33_4.46	S15592	53.685	98.709	0.0	9811.0	63.0
+g13059	SUPER_GRC2	germ*	0-4h	both-sexes	6_0	1.15_0.0	S14141	100.0	100.0	0.0	1524.0	0.0
+g13059	SUPER_GRC2	germ*	4-8h	both-sexes	6_0	0.71_0.0	S14141	100.0	100.0	0.0	1524.0	0.0
+g13059	SUPER_GRC2	both	adult	female	6_5	1.73_0.56	S14141	100.0	100.0	0.0	1524.0	0.0
+g13065	SUPER_GRC2	germ*	0-4h	female	3_0	11.0_0.0	s713	3.268	94.34	2.95e-109	8109.0	8.0
+g13065	SUPER_GRC2	germ*	4-8h	female	3_0	6.64_0.0	s713	3.268	94.34	2.95e-109	8109.0	8.0
+g13065	SUPER_GRC2	both	adult	both-sexes	8_6	4.14_6.98	s713	3.268	94.34	2.95e-109	8109.0	8.0
+g13362	SUPER_GRC2	germ*	late-larva-early-pupa	both-sexes	4_0	8.31_0.0	NO_BLAST_HIT					
+g13362	SUPER_GRC2	germ*	adult	male	3_0	6.61_0.0	NO_BLAST_HIT					
+g13363	SUPER_GRC2	germ*	late-larva-early-pupa	male	2_0	1.43_0.0	SUPER_2	4.966	82.727	2.25e-17	2215.0	16.0
+g13363	SUPER_GRC2	germ*	adult	male	3_0	0.9_0.0	SUPER_2	4.966	82.727	2.25e-17	2215.0	16.0
+g13594	SUPER_GRC2	germ*	late-larva-early-pupa	male	3_0	0.74_0.0	S11756	104.938	91.765	3.8099999999999996e-94	243.0	9.0
+g13694	SUPER_GRC2	germ*	late-larva-early-pupa	male	3_0	1.02_0.0	s8496	21.817	85.412	1.27e-127	2168.0	34.0
+g13694	SUPER_GRC2	germ*	adult	male	2_0	0.66_0.0	s8496	21.817	85.412	1.27e-127	2168.0	34.0
+g13992	SUPER_GRC2	both	adult	female	3_3	2.03_0.76	SUPER_3	100.0	98.148	0.0	432.0	8.0
+g14257	SUPER_GRC2	both	late-larva-early-pupa	both-sexes	3_6	3.33_4.48	SUPER_1	63.485	95.425	9.67e-62	241.0	2.0
+g14257	SUPER_GRC2	both	adult	both-sexes	5_9	2.14_6.86	SUPER_1	63.485	95.425	9.67e-62	241.0	2.0
+g14259	SUPER_GRC2	soma	adult	both-sexes	0_4	0.0_4.27	s3032	100.372	98.639	0.0	1611.0	16.0
+g14637	SUPER_GRC2	germ*	0-4h	both-sexes	6_0	14.58_0.0	S12321	19.836	100.0	7.7e-138	1341.0	0.0
+g14637	SUPER_GRC2	germ*	4-8h	both-sexes	6_0	6.19_0.0	S12321	19.836	100.0	7.7e-138	1341.0	0.0
+g14637	SUPER_GRC2	both	late-larva-early-pupa	both-sexes	6_6	13.14_4.29	S12321	19.836	100.0	7.7e-138	1341.0	0.0
+g14637	SUPER_GRC2	both	adult	both-sexes	9_9	8.61_21.45	S12321	19.836	100.0	7.7e-138	1341.0	0.0
+g14961	SUPER_GRC2	germ*	4-8h	both-sexes	2_0	0.31_0.0	s5493	100.0	98.711	0.0	543.0	7.0
+g15174	SUPER_GRC2	germ*	adult	female	5_0	0.39_0.0	s8655	81.276	74.862	0.0	3573.0	661.0
+g15175	SUPER_GRC2	germ*	0-4h	both-sexes	4_0	0.29_0.0	s984	100.0	100.0	0.0	933.0	0.0
+g15175	SUPER_GRC2	germ	adult	female	5_1	0.34_0.44	s984	100.0	100.0	0.0	933.0	0.0
+g15244	SUPER_GRC2	germ*	4-8h	both-sexes	3_0	1.32_0.0	NO_BLAST_HIT					
+g15244	SUPER_GRC2	both	late-larva-early-pupa	both-sexes	3_3	0.85_0.5	NO_BLAST_HIT					
+g15244	SUPER_GRC2	soma	adult	both-sexes	1_8	0.95_0.77	NO_BLAST_HIT					
+g16029	SUPER_GRC2	germ*	late-larva-early-pupa	female	2_0	0.57_0.0	NO_BLAST_HIT					
+g17107	SUPER_GRC2	germ*	adult	male	3_0	1.19_0.0	s7088	67.782	80.713	0.0	1614.0	176.0
+g17119	SUPER_GRC2	germ*	adult	female	3_0	0.6_0.0	SUPER_2	95.851	87.612	0.0	699.0	72.0
+g17249	SUPER_GRC2	germ*	0-4h	both-sexes	6_0	3.61_0.0	s3431	97.921	98.514	0.0	1443.0	20.0
+g17249	SUPER_GRC2	germ*	4-8h	both-sexes	6_0	3.7_0.0	s3431	97.921	98.514	0.0	1443.0	20.0
+g17249	SUPER_GRC2	both	late-larva-early-pupa	both-sexes	6_5	3.31_1.55	s3431	97.921	98.514	0.0	1443.0	20.0
+g17249	SUPER_GRC2	both	adult	both-sexes	9_9	6.25_5.8	s3431	97.921	98.514	0.0	1443.0	20.0
+g18444	SUPER_GRC2	germ*	0-4h	female	3_0	1.36_0.0	s9155	5.805	86.751	6.880000000000001e-166	9492.0	45.0
+g18444	SUPER_GRC2	germ*	4-8h	female	3_0	1.23_0.0	s9155	5.805	86.751	6.880000000000001e-166	9492.0	45.0
+g18444	SUPER_GRC2	both	late-larva-early-pupa	female	2_2	0.37_0.44	s9155	5.805	86.751	6.880000000000001e-166	9492.0	45.0
+g18444	SUPER_GRC2	both	adult	female	3_3	1.82_9.64	s9155	5.805	86.751	6.880000000000001e-166	9492.0	45.0
+g18454	SUPER_GRC2	germ	adult	female	2_1	0.47_0.28	S15623	100.0	97.101	6.84e-96	207.0	6.0
+g18467	SUPER_GRC2	soma	adult	both-sexes	0_4	0.0_0.48	S15599	94.393	99.34	0.0	642.0	3.0
+g18506	SUPER_GRC2	soma	late-larva-early-pupa	female	0_2	0.0_0.46	S15537	17.173	95.203	0.0	5462.0	29.0
+g18509	SUPER_GRC2	germ*	0-4h	both-sexes	6_0	1.68_0.0	S15531	98.392	97.981	0.0	1057.0	16.0
+g18509	SUPER_GRC2	germ*	4-8h	both-sexes	7_0	2.8_0.0	S15531	98.392	97.981	0.0	1057.0	16.0
+g18509	SUPER_GRC2	both	adult	both-sexes	10_9	2.25_0.97	S15531	98.392	97.981	0.0	1057.0	16.0
+g18514	SUPER_GRC2	germ	late-larva-early-pupa	female	3_1	0.64_0.7	S15505	100.0	93.264	9.51e-162	386.0	26.0
+g18521	SUPER_GRC2	soma	late-larva-early-pupa	female	0_3	0.0_0.5	s4737	99.357	85.329	0.0	933.0	130.0
+g18526	SUPER_GRC2	both	late-larva-early-pupa	female	2_2	0.81_0.76	S15497	62.521	89.919	0.0	1190.0	54.0
+g18528	SUPER_GRC2	germ*	0-4h	female	2_0	0.27_0.0	S15495	100.0	95.155	0.0	516.0	25.0
+g18528	SUPER_GRC2	germ*	late-larva-early-pupa	female	3_0	0.64_0.0	S15495	100.0	95.155	0.0	516.0	25.0
+g18534	SUPER_GRC2	germ	late-larva-early-pupa	female	2_1	0.55_0.32	SUPER_X	100.0	95.389	0.0	1041.0	48.0
+g18538	SUPER_GRC2	germ*	late-larva-early-pupa	female	2_0	0.86_0.0	S15490	100.174	96.174	0.0	574.0	21.0
+g19121	SUPER_GRC2	germ*	0-4h	both-sexes	6_0	2.71_0.0	NO_BLAST_HIT					
+g19121	SUPER_GRC2	germ*	4-8h	both-sexes	6_0	2.27_0.0	NO_BLAST_HIT					
+g19121	SUPER_GRC2	both	late-larva-early-pupa	both-sexes	5_5	7.86_0.4	NO_BLAST_HIT					
+g19121	SUPER_GRC2	both	adult	both-sexes	9_6	64.68_0.68	NO_BLAST_HIT					
+g19161	SUPER_GRC2	germ*	late-larva-early-pupa	female	3_0	1.01_0.0	NO_BLAST_HIT					
+g233	SUPER_GRC1	germ*	late-larva-early-pupa	both-sexes	3_0	0.45_0.0	NO_BLAST_HIT					
+g2596	SUPER_GRC1	soma	adult	both-sexes	1_5	0.25_0.65	S15438	100.0	100.0	0.0	1283.0	0.0
+g3491	SUPER_GRC1	soma	adult	both-sexes	0_2	0.0_0.33	S11004	100.0	99.617	0.0	783.0	3.0
+g491	SUPER_GRC1	germ*	late-larva-early-pupa	male	3_0	1.06_0.0	NO_BLAST_HIT					
+g596	SUPER_GRC1	germ*	late-larva-early-pupa	female	3_0	1.26_0.0	NO_BLAST_HIT					
+g6396	SUPER_GRC1	germ*	0-4h	female	3_0	40.87_0.0	NO_BLAST_HIT					
+g6396	SUPER_GRC1	germ*	4-8h	female	3_0	35.78_0.0	NO_BLAST_HIT					
+g6396	SUPER_GRC1	germ*	late-larva-early-pupa	female	3_0	3.27_0.0	NO_BLAST_HIT					
+g6396	SUPER_GRC1	both	adult	female	4_3	22.57_6.58	NO_BLAST_HIT					
+g7428	SUPER_GRC1	germ*	late-larva-early-pupa	both-sexes	6_0	0.61_0.0	SUPER_X	100.0	99.74	0.0	384.0	1.0
+g7428	SUPER_GRC1	both	adult	female	4_3	1.0_0.42	SUPER_X	100.0	99.74	0.0	384.0	1.0
+g7565	SUPER_GRC1	germ*	0-4h	both-sexes	6_0	0.38_0.0	S13253	100.0	99.858	0.0	703.0	1.0
+g7565	SUPER_GRC1	germ*	adult	both-sexes	7_0	0.77_0.0	S13253	100.0	99.858	0.0	703.0	1.0
+g7610	SUPER_GRC1	germ*	adult	both-sexes	2_0	0.26_0.0	s3280	79.099	96.835	0.0	799.0	20.0
+g7957	SUPER_GRC1	germ*	4-8h	female	3_0	0.44_0.0	NO_BLAST_HIT					
+g7958	SUPER_GRC1	germ*	0-4h	female	3_0	1.28_0.0	SUPER_2	3.509	100.0	4.84e-05	798.0	0.0
+g7958	SUPER_GRC1	germ*	4-8h	female	3_0	1.78_0.0	SUPER_2	3.509	100.0	4.84e-05	798.0	0.0
+g7958	SUPER_GRC1	both	adult	female	3_2	0.72_0.37	SUPER_2	3.509	100.0	4.84e-05	798.0	0.0
+g8036	SUPER_GRC1	germ*	4-8h	female	2_0	0.34_0.0	SUPER_1	10.922	86.239	7.64e-93	2994.0	35.0
+g8044	SUPER_GRC1	germ	adult	female	2_1	0.42_0.3	s3018	47.948	96.018	0.0	7018.0	80.0
+g8751	SUPER_GRC2	germ*	4-8h	both-sexes	3_0	0.28_0.0	s9514	100.0	96.451	0.0	648.0	20.0
+g9343	SUPER_GRC2	both	adult	both-sexes	8_7	0.77_0.46	s530	102.749	94.14	0.0	764.0	20.0
+g9901	SUPER_GRC2	soma	adult	both-sexes	0_4	0.0_0.62	s2190	63.42	92.631	0.0	3830.0	122.0
