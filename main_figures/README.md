@@ -1,3 +1,7 @@
-### Final figures in SVG form
+### Main manuscript figures in SVG form
+
 --- 
-#### Associated R scripts in respetive direcctiores 
+
+#### Associated R scripts for Figures 2, 3 4 in respective directories
+
+> ***Note*** Figure 1 is a cytological image with no associated code 
