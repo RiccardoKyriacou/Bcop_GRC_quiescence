@@ -158,11 +158,7 @@ evolution across the entire region:
 
 $$T = \\frac{D}{\\mu_{\\text{fly}} + \\mu_{\\text{bacteria}}}$$
 
-Since no mutation rate estimates exist for _B. coprophila_ or its Rickettsiaceae 
-endosymbiont, we substitute reported neutral mutation rates for _Drosophila melanogaster_ 
-( $$ \mu = 2.8 \times 10^{-9} $ per site per generation; Keightley et al. 2014) and the 
-endosymbiotic bacterium _Teredinibacter turnerae_ 
-( $$ \mu = 1.1 \times 10^{-9} $ per site per generation; Senra et al. 2018).
+Since no mutation rate estimates exist for *B. coprophila* or its *Rickettsiaceae* endosymbiont, we substitute reported neutral mutation rates for *Drosophila melanogaster* ($\mu = 2.8 \times 10^{-9}$ per site per generation; Keightley et al. 2014) and the endosymbiotic bacterium *Teredinibacter turnerae* ($\mu = 1.1 \times 10^{-9}$ per site per generation; Senra et al. 2018).
 
 ```bash
 python 05_get_divergence.py
