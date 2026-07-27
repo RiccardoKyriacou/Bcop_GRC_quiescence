@@ -20,13 +20,7 @@ sample_order <- c(
   "B25", "B26", "B27"
 )
 
-# ---- KEY CHANGE -----------------------------------------------------------------------
-# Extract the confident gene list from the reproducibility-filtered object, then pull
 # ALL expression rows for those genes from the unfiltered TPM_genes table.
-# This ensures every sample/group is represented in the heatmap rather than only the
-# libraries that passed the reproducibility threshold (which were silently filled with 0
-# when Expressed_GRC_genes was used directly as the source).
-# ---------------------------------------------------------------------------------------
 confident_genes <- unique(Expressed_GRC_genes$Gene)
 
 all_expr_confident <- TPM_genes %>%
