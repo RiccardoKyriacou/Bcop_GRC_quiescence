@@ -38,7 +38,7 @@ col_point <- c("female" = "#C0005C", "male" = "#3B5E8A")
 # Data
 # ---------------------------------------------
 
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\03_expressed_GRC_genes\\outputs")
+setwd("Revisions\\03_expressed_GRC_genes\\outputs")
 home <- getwd()
 Expressed_GRC_genes <- read_tsv(file.path(home, "Expressed_GRC_genes.tsv"))
 
