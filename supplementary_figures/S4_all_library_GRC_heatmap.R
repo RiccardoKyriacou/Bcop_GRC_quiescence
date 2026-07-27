@@ -131,7 +131,7 @@ p_heat <- ggplot(df_heat_plot, aes(x = Sample, y = Gene, fill = log2_TPM)) +
 ### ALIGNMENT SCORE STRIP
 ### ---------------------------------------------------------------------------------------###
 
-blast_df <- read_tsv("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions\\03_expressed_GRC_genes\\GRC_BLAST_table.tsv") %>%
+blast_df <- read_tsv("Revisions\\03_expressed_GRC_genes\\GRC_BLAST_table.tsv") %>%
   mutate(
     `%Identity` = replace_na(`%Identity`, 0),
     Coverage    = replace_na(Coverage, 0)
@@ -197,7 +197,4 @@ p_final_replicates <- top_row / bottom_row +
 
 p_final_replicates
 
-setwd("C:\\Users\\s2673271\\OneDrive - University of Edinburgh\\PhD\\Y1\\Sciaridae\\Paper_GRC_transcription\\GENETICS_submission\\Revisions")
-home <- getwd()
-ggsave("FigS1_GRC_all_replicate_heatmap_unedited.svg", p_final_replicates, width = 14, height = max(8, nrow(heat_mat) * 0.25 + 3))
 
