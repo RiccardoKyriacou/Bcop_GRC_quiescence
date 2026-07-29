@@ -72,8 +72,8 @@ All Python scripts are written for **Python 3**.
 |------|-----------|
 | Reference _B. coprophila_ genome assembly | [GCA_965233685.1](https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_965233685.1/); SRA: ERS15411730 |
 | Adult RNA-seq libraries (Baird et al. 2025) | BioProject [PRJNA1109384](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1109384) |
-| Embryo RNA-seq libraries (this study) | BioProject [PRJNA1220056](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1220056) |
-| Late larval/early pupal RNA-seq (this study) | Available upon publication |
+| Embryo RNA-seq libraries (Baird et al. 2025) | BioProject [PRJNA1220056](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1220056) |
+| Late larval/early pupal RNA-seq (this study) | [PRJNA1504074](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1504074)  |
 | _Rickettsiaceae_ endosymbiont genome | Available upon publication |
 | Urban et al. (2021) pooled embryo RNA-seq | BioProject [PRJNA291918](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA291918) |
 
