@@ -74,7 +74,7 @@ All Python scripts are written for **Python 3**.
 | Adult RNA-seq libraries (Baird et al. 2025) | BioProject [PRJNA1109384](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1109384) |
 | Embryo RNA-seq libraries (Baird et al. 2025) | BioProject [PRJNA1220056](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1220056) |
 | Late larval/early pupal RNA-seq (this study) | BioProject [PRJNA1504074](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1504074)  |
-| _Rickettsiaceae_ endosymbiont genome | Available upon publication |
+| _Rickettsiaceae_ endosymbiont genome | BioProject [PRJEB87816](https://www.ncbi.nlm.nih.gov/bioproject/PRJEB87816) |
 | Urban et al. (2021) pooled embryo RNA-seq | BioProject [PRJNA291918](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA291918) |
 
 ---
