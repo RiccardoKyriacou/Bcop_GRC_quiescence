@@ -11,9 +11,9 @@ origin_data <- tribble(
   "g13363",   "Transposable Element",
   "g491",     "Transposable Element",
   "g596",     "Transposable Element",
+  "g7958",    "Transposable Element",
   "g13694",   "Insect",
   "g15244",   "Insect",
-  "g7958",    "Unclear",
   "g18444 ",  "Insect",
   "g6396 ",   "Insect",
   "g13362",   "Insect",
@@ -49,7 +49,7 @@ pie <- ggplot(category_counts, aes(ymax = ymax, ymin = ymin, xmax = 1, xmin = 0,
   theme_void() +
   scale_fill_manual(
     values = c(
-      "Transposable Element" = "#88cceeff",
+      "Transposable Element" = "#0088aaff",
       "Insect" = "#882255ff",
       "Uncertain" = "grey65"
     )
@@ -58,4 +58,3 @@ pie <- ggplot(category_counts, aes(ymax = ymax, ymin = ymin, xmax = 1, xmin = 0,
   theme(legend.position = "bottom")
 
 pie
-
