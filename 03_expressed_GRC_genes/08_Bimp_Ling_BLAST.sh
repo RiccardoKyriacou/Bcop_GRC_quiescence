@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=BLASTn
+#SBATCH --job-name=tBLASTn
 #SBATCH --nodes=1
 #SBATCH --ntasks=16
 #SBATCH --export=ALL
@@ -30,9 +30,9 @@ conda activate /home/s2673271/miniforge3/envs/genomics
 
 echo "Copying input files..."
 
-# Protein queries from B. coprophila
+# GRC-expressed transcript queries from B. coprophila
 rsync -av \
-/mnt/loki/ross/flies/sciaridae/GRCs/GRC_expression/Bradysia_coprophila/03_BLAST_v2/outputs/GRC_genes.fasta \
+/mnt/loki/ross/flies/sciaridae/GRCs/GRC_expression/Bradysia_coprophila/03_BLAST_v2/outputs/GRC_transcripts.fasta \
 ${SCRATCH}/
 
 # B. impatiens genome
@@ -66,26 +66,26 @@ makeblastdb \
 -out L_ing_DB
 
 #################################################
-# Run BLASTn
+# Run tBLASTn
 #################################################
 
-echo "Running BLASTn against B. impatiens genome..."
+echo "Running tBLASTn against B. impatiens genome..."
 
-blastn \
--query GRC_genes.fasta \
+tblastn \
+-query RC_transcripts.fasta \
 -db B_imp_DB \
--out Bimp_Bcop_GRC_blastn.tsv \
+-out Bimp_Bcop_GRC_tblastn.tsv \
 -evalue 1e-5 \
 -num_threads 16 \
 -max_target_seqs 10 \
 -outfmt '6 std qlen slen'
 
-echo "Running BLASTn against L. ingenua genome..."
+echo "Running tBLASTn against L. ingenua genome..."
 
-blastn \
--query GRC_genes.fasta \
+tblastn \
+-query RC_transcripts.fasta \
 -db L_ing_DB \
--out Ling_Bcop_GRC_blastn.tsv \
+-out Ling_Bcop_GRC_tblastn.tsv \
 -evalue 1e-5 \
 -num_threads 16 \
 -max_target_seqs 10 \
