@@ -1,128 +1,75 @@
-
 library(tidyverse)
+library(ggtext)  
 
-file <- "outputs\\Bimp_Ling_BLAST\\Bimp_ling_combined_blast_table.tsv"
+# 1. read the ncounts matrices produced by the python script
+read_ncounts <- function(file, sp) {
+  read_tsv(file, show_col_types = FALSE) %>%
+    pivot_longer(-gene, names_to = "chromosome", values_to = "n") %>%
+    mutate(species = sp)
+}
 
-blast <- read.delim(file, header = FALSE)
-
-colnames(blast) <- c(
-  "gene","subject","pident","length","mismatch","gapopen",
-  "qstart","qend","sstart","send","evalue","bitscore",
-  "qlen","slen"
-)
-blast
-# -----------------------
-# P4: Cross-species conservation
-# -----------------------
-blast
-
-# Classify hits
-blast_scaffolds <- blast %>%
-  mutate(
-    category = case_when(
-      grepl("^Bimp_", subject) & grepl("GRC", subject) ~ "B. impatiens GRC",
-      grepl("^Bimp_", subject) ~ "B. impatiens Core",
-      grepl("^Ling_", subject) & grepl("GRC", subject) ~ "L. ingenua GRC",
-      grepl("^Ling_", subject) ~ "L. ingenua Core",
-      TRUE ~ NA_character_
-    )
-  ) %>%
-  filter(!is.na(category)) %>%
-  
-  # Count unique chromosomes/scaffolds
-  distinct(gene, category, subject) %>%
-  count(gene, category, name = "n_scaffolds")
-
-
-# Add genes with no hits
-
-all_genes <- unique(df$gene)
-
-
-blast_scaffolds <- blast_scaffolds %>%
-  complete(
-    gene = all_genes,
-    category = c(
-      "B. impatiens GRC",
-      "B. impatiens Core",
-      "L. ingenua GRC",
-      "L. ingenua Core"
-    ),
-    fill = list(n_scaffolds = 0)
-  )
-blast_scaffolds
-
-# Identify genes with absolutely no hits
-genes_with_hits <- blast_scaffolds %>%
-  group_by(gene) %>%
-  summarise(total_hits = sum(n_scaffolds), .groups = "drop")
-
-no_hit_genes <- genes_with_hits %>%
-  filter(total_hits == 0) %>%
-  transmute(
-    gene,
-    category = "No hit",
-    n_scaffolds = 1
-  )
-
-blast_scaffolds <- bind_rows(
-  blast_scaffolds,
-  no_hit_genes
+data <- bind_rows(
+  read_ncounts("Bimp_qcov70_pident60_ncounts.tsv", "Bimp"),
+  read_ncounts("Ling_qcov70_pident60_ncounts.tsv ", "Ling")
 )
 
-# Match ordering from p1
+# 2. homology class + full gene set (so absent genes still show) 
+gene_class <- c(g491="TE", g596="TE", g13363="TE", g17107="TE",
+                g6396="gene", g13362="gene", g13694="gene",
+                g15244="gene", g18444="gene", g7958="unclear")
+all_genes <- names(gene_class)
 
-# Read table
-df <- read.delim("Alien_Index_summary.txt")
+# order: genes -> unclear -> TEs 
+gene_levels <- c("g6396","g13362","g13694","g15244","g18444",
+                 "g491","g596","g13363","g17107", 
+                 "g7958")
 
-# Clean gene names
-df$gene <- gsub(
-  "_(insect-like|TE-like|unclear_homology)",
-  "",
-  df$qseqid
+plot_df <- expand_grid(
+  gene        = all_genes,
+  species     = c("Bimp","Ling"),
+  chromosome = c("core_autosome","X","GRC")
+) %>%
+  left_join(data, by = c("gene","species","chromosome")) %>%
+  mutate(n = replace_na(n, 0))
+
+# 3. coloured y-axis labels by class
+class_col <- c(TE = "#2c7fb8", gene = "#882255", unclear = "grey40")
+y_labels <- setNames(
+  sprintf("<span style='color:%s'>%s</span>",
+          class_col[gene_class[gene_levels]], gene_levels),
+  gene_levels
 )
 
-
-gene_order <- df %>%
-  distinct(gene, alien_index) %>%
-  arrange(alien_index) %>%
-  pull(gene)
-
-blast_scaffolds$gene <- factor(
-  blast_scaffolds$gene,
-  levels = gene_order
+# 4. manual chromosome colours ----
+chrm_cols <- c(
+  "core_autosome" = "#ffab75",  # orange
+  "X"             = "#d65500ff",  # dark orange
+  "GRC"           = "#aea0e9ff"   # blue
 )
+plot_df
+# 5. plot 
+p3c <- ggplot(filter(plot_df, n > 0),
+              aes(chromosome, gene)) +
+  geom_point(aes(size = n, fill = chromosome),
+             shape = 21, colour = "grey20", stroke = 0.4) +
+  facet_wrap(~species,
+             labeller = as_labeller(c(Bimp = "B. impatiens",
+                                      Ling = "L. ingenua"))) +
+  scale_fill_manual(name   = "Chromosome",
+                    values = chrm_cols,
+                    breaks = c("core_autosome","X","GRC"),
+                    labels = c("Autosome","X","GRC")) +
+  scale_size_continuous(name = "Loci (n)", range = c(3, 9),
+                        breaks = c(1, 2, 4, 8)) +
+  scale_x_discrete(limits = c("core_autosome","X","GRC"),
+                   labels = c("Core (A)","X","GRC")) +
+  scale_y_discrete(limits = rev(gene_levels),
+                   labels = y_labels, drop = FALSE) +
+  labs(x = NULL, y = NULL) +
+  theme_classic(base_size = 13) +
+  theme(axis.text.y = element_markdown(),
+        strip.text  = element_text(face = "italic"))
 
-p4 <- ggplot(
-  blast_scaffolds,
-  aes(
-    x = n_scaffolds,
-    y = gene,
-    fill = category
-  )
-) +
-  geom_col() +
-  
-  scale_fill_manual(
-    values = c(
-      "B. impatiens GRC" = "#aea0e9ff",
-      "B. impatiens Core" = "#ffab75ff",
-      "L. ingenua GRC1" = "#321e87ff",
-      "L. ingenua Core" = "#d65500ff",
-      "No hit" = "white"
-    )
-  ) +
-  
-  scale_y_discrete(drop = FALSE) +
-  
-  labs(
-    x = "No. of cross-species hits",
-    y = NULL,
-    fill = "Cross-species conservation"
-  ) +
-  
-  theme_classic(base_size = 14)
-p4
-
-ggsave("Cross_species_hits.svg", p4, width = 5, height = 4)
+p3c
+ggsave("Fig3C_cross_species.svg", p3c, width = 7, height = 4.5)
 
