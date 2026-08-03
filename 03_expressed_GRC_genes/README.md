@@ -267,10 +267,10 @@ python 07_get_interpro_summary.py
 
 ---
 
-### Step 8 — BLASTn of expressed GRC-linked genes against *B. impatiens* and *L. ingenua*
+### Step 8 — tBLASTn of expressed GRC-linked genes against *B. impatiens* and *L. ingenua*
 
 To assess cross-species conservation of confidently expressed GRC-linked loci, we perform 
-BLASTn searches of expressed GRC nucleotide sequences against the full genome assemblies 
+tBLASTn searches of expressed GRC-loci transcripts against the full genome assemblies 
 (GRCs and core chromosomes) of two other fungus gnat species with assembled GRC genomes: 
 *Bradysia impatiens* and *Lycoriella ingenua* (Hodson et al. 2026).
 
@@ -278,12 +278,12 @@ BLASTn searches of expressed GRC nucleotide sequences against the full genome as
 08_Bimp_Ling_BLAST.sh
 ```
 
-Nucleotide sequences from `outputs/fasta_files/GRC_genes.nucl.fasta` are queried against 
+Nucleotide sequences from `outputs/fasta_files/expressed_GRC_transcripts.fasta` are queried against 
 both species' assemblies
 
 | Output | Description |
 |--------|-------------|
-| `outputs/Bimp_Ling_BLAST/` | BLASTn results for expressed GRC-linked loci against *B. impatiens* and *L. ingenua* assemblies |
+| `outputs/Bimp_Ling_BLAST/` | BLASTn results for expressed GRC-linked loci against *B. impatiens* and *L. ingenua* assemblies, as well as scripts to tidy up results and look for strong hits (qcov > 70, pident > 60) to infer homology |
 
 ---
 ### Step 9 — Three-way BLASTp: sciarid vs. cecidomyiid vs. mosquito outgroup
