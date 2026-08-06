@@ -41,6 +41,7 @@ rm ERR12736861.sam
 | `ERR12736861.sorted.bam` | Sorted BAM file of HiFi reads aligned to the _B. coprophila_ reference genome |
 | `ERR12736861.sorted.bam.bai` | BAM index for visualisation in IGV |
 
+> ***NOTE*** Raw DNA PacBio long reads for _B. coprophila_ can be downloaded from https://www.ncbi.nlm.nih.gov/sra/ERR12736861
 ---
 
 ### Step 2 — BLASTp flanking genes to classify as eukaryotic or bacterial
