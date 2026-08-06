@@ -24,7 +24,7 @@ rsync -av /mnt/loki/ross/flies/sciaridae/GRCs/pacbio_long_reads/outputs/ERR12736
 
 # Index and align
 minimap2 -d idBraCopr2.1.primary.masked.mmi idBraCopr2.1.primary.masked.fa
-minimap2 -ax map-pb idBraCopr2.1.primary.masked.mmi ERR12736861.fastq.gz > ERR12736861.sam
+minimap2 -ax map-hifi idBraCopr2.1.primary.masked.mmi ERR12736861.fastq.gz > ERR12736861.sam
 
 # Convert to sorted BAM
 samtools view -@ 16 -bS ERR12736861.sam | samtools sort -@ 16 -o ERR12736861.sorted.bam
