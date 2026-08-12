@@ -293,7 +293,7 @@ BLASTp searches of expressed GRC protein sequences against three reference prote
 
 - **Sciarid core**: *B. coprophila* core chromosome (non-GRC) proteome (from Hodson et al. 2026)
 - **Cecidomyiid**: *Aphidoletes aphidimyza* proteome — the closest phylogenetic neighbour 
-  to cecidomyiid-derived GRC-linked genes (Hodson et al. 2026). Proteome available in  `/outputs/alien_index/Aaph_braker.gff3`
+  to cecidomyiid-derived GRC-linked genes (Hodson et al. 2026). Proteome (GFF) available in  `/outputs/alien_index/Aaph_braker.gff3`
 - **Dipteran outgroup**: *Anopheles gambiae* proteome (GCF_943734735.2)
 
 ```bash
