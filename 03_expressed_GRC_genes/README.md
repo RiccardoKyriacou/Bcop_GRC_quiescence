@@ -291,9 +291,9 @@ both species' assemblies
 To generate the BLASTp inputs required for the Alien Index calculation in Step 10, we perform 
 BLASTp searches of expressed GRC protein sequences against three reference proteomes:
 
-- **Sciarid core**: *B. coprophila* core chromosome (non-GRC) proteome
+- **Sciarid core**: *B. coprophila* core chromosome (non-GRC) proteome (from Hodson et al. 2026)
 - **Cecidomyiid**: *Aphidoletes aphidimyza* proteome — the closest phylogenetic neighbour 
-  to cecidomyiid-derived GRC-linked genes (Hodson et al. 2026)
+  to cecidomyiid-derived GRC-linked genes (Hodson et al. 2026). Proteome available in  `/outputs/alien_index/Aaph_braker.gff3`
 - **Dipteran outgroup**: *Anopheles gambiae* proteome (GCF_943734735.2)
 
 ```bash
