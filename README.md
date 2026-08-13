@@ -62,7 +62,7 @@ All Python scripts are written for **Python 3**.
 | `05_Urban_et_al_re-analysis` | Scripts to download, align, and quantify pooled embryo RNA-seq data from Urban et al. (2021; BioProject PRJNA291918) spanning 2h–2 days post-fertilisation, to assess GRC transcription across and after zygotic genome activation. |
 | `main_figures` | R scripts and outputs used to generate main paper Figures 2, 3, and 4. |
 | `supplementary_figures` | R scripts used to generate supplementary figures and perform associated statistics. |
-| `supplementary_materials` | R scripts used to perform analysis for supplementary materials. |
+| `supplementary_materials` | R scripts used to perform analysis for supplementary materials. Supplementary data excel file also provided |
 
 ---
 
