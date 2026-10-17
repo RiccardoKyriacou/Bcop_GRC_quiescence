@@ -10,8 +10,8 @@
 ###### <sup>4</sup> Department of Biology, Massachusetts Institute of Technology, Cambridge, MA, USA
 ###### <sup>5</sup> University College London, UCL Department of Genetics, Evolution & Environment, UK
 
-###### ✉ Corresponding authors: R.G.Kyriacou@sms.ed.ac.uk, Laura.Ross@ed.ac.uk, hodson.christina@gmail.com
 ###### \* Authors contributed equally
+###### ✉ Corresponding authors: R.G.Kyriacou@sms.ed.ac.uk, Laura.Ross@ed.ac.uk, hodson.christina@gmail.com
 
 ---
 
