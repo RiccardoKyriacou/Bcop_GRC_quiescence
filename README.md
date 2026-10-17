@@ -15,7 +15,7 @@
 
 ---
 
-> **DOI:** [Genetics](https://doi.org/10.1093/genetics/iyag283)
+> **DOI:** (https://doi.org/10.1093/genetics/iyag283)
 
 ---
 
