@@ -15,7 +15,7 @@
 
 ---
 
-> **DOI:** [Genetics]([https://www.biorxiv.org/content/10.64898/2025.12.11.693641v1](https://doi.org/10.1093/genetics/iyag283))  
+> **DOI:** [Genetics](https://doi.org/10.1093/genetics/iyag283)
 
 ---
 
